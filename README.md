@@ -1,5 +1,7 @@
 # SMBProof
 
+![SMBProof cover showing a file check across a storage share](docs/images/cover.png)
+
 Verify expected SMB read access from a specific Windows logon.
 
 After an access change, use SMBProof to verify that an authorized account
@@ -79,6 +81,24 @@ credential evidence. In PowerShell, read `$LASTEXITCODE` immediately after
 the command to use the result in automation. HTML is self-contained. Choose
 a new output filename for each run, since report creation preserves existing
 files. Both formats contain the UNC path and account names.
+
+## Screenshots
+
+These images show SMBProof output rendered from simulated SMB responses and
+example accounts.
+
+### PowerShell output
+
+The backup operator can read the test file as expected.
+
+![PowerShell output showing an expected allowed read](docs/images/powershell.png)
+
+### HTML report
+
+The restricted account receives the expected access denial, so the report
+shows the check passed.
+
+![SMBProof HTML report showing an expected access denial](docs/images/html-report.png)
 
 ## SMB credential evidence
 
